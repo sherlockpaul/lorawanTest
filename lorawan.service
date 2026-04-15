@@ -1,0 +1,14 @@
+[Unit]
+Description=LoRaWAN Dashboard Backend
+After=network.target postgresql.service mosquitto.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/lorawan
+ExecStart=/opt/lorawan/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

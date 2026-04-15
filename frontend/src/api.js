@@ -1,4 +1,4 @@
-const BASE = 'http://192.168.0.149:8000/api'
+const BASE = '/api'
 
 function authHeaders() {
   const token = localStorage.getItem('token')
